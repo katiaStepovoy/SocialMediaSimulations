@@ -1,30 +1,28 @@
 import * as React from 'react';
-import { styled } from '@mui/material/styles';
-import Paper from '@mui/material/Paper';
-import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import Avatar from '@mui/material/Avatar';
-//import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardHeader from '@mui/material/CardHeader';
 import CardMedia from '@mui/material/CardMedia';
-import IconButton, { IconButtonProps } from '@mui/material/IconButton';
+import IconButton from '@mui/material/IconButton';
 import { red } from '@mui/material/colors';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 
 function Post() {
   var name="Remy Sharp";
+  var date = "September 14, 2016";
+  var text = " This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like.";
+
   return (
-            <Card>
-            <CardHeader
+            <Card variant="outlined"  sx={{ borderRadius: 4}}>
+            <CardHeader sx={{ textAlign: 'left' }}
         avatar={
-          <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-            R
+          <Avatar sx={{ bgcolor: red[500] }}>
+            {name.charAt(0)}
           </Avatar>
         }
         action={
@@ -32,8 +30,8 @@ function Post() {
             <MoreVertIcon />
           </IconButton>
         }
-        title="Shrimp and Chorizo Paella"
-        subheader="September 14, 2016"
+        title={name}
+        subheader={date}
       />
       <CardMedia
         component="img"
@@ -43,9 +41,7 @@ function Post() {
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
-          This impressive paella is a perfect party dish and a fun meal to cook
-          together with your guests. Add 1 cup of frozen peas along with the mussels,
-          if you like.
+          {text}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
@@ -54,9 +50,7 @@ function Post() {
         </IconButton>
         <IconButton aria-label="share">
           <ShareIcon />
-        </IconButton>
-
-          <ExpandMoreIcon />        
+        </IconButton>       
       </CardActions>
             </Card>
   );
