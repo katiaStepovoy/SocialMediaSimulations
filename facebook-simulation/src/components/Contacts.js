@@ -7,6 +7,8 @@ import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Badge from '@mui/material/Badge';
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
+
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
@@ -60,23 +62,23 @@ function Contacts() {
                         <Avatar alt={name} src="/static/images/avatar/1.jpg" />
                     </StyledBadge>
                 </ListItemAvatar>
-                <Typography sx={{fontFamily: "Helvetica", fontSize:14 }}>{name}</Typography>
+                <Typography sx={{fontFamily: "Helvetica", fontSize:14}}>{name}</Typography>
                
             </ListItem>
         )
     })
 
     return (
-        <div>
-            <Box sx={{ mt: 4 }}>
-                <Typography variant="body1" fontSize='1.5vw' color="gray" fontWeight='700' >
+        <Paper elevation={0} sx={{bgcolor: 'transparent'}} >
+            <Box sx={{ mt: 4}}>
+                <Typography fontSize='1.5vw' color="gray" fontWeight='700' >
                     Contacts
                 </Typography>
             </Box>
-            <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+            <List>
                 {namesList}
             </List>
-        </div>
+        </Paper>
 
     );
 }
