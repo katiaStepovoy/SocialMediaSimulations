@@ -13,13 +13,13 @@ import ShareIcon from '@mui/icons-material/Share';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 
 function Post() {
-  var name="Remy Sharp";
+  var name = "Remy Sharp";
   var date = "September 14, 2016";
   var text = " This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like.";
 
   return (
-            <Card variant="outlined"  sx={{ borderRadius: 4}}>
-            <CardHeader sx={{ textAlign: 'left' }}
+    <Card variant="outlined" sx={{ borderRadius: 4 }}>
+      <CardHeader sx={{ textAlign: 'left' }}
         avatar={
           <Avatar sx={{ bgcolor: red[500] }}>
             {name.charAt(0)}
@@ -36,7 +36,7 @@ function Post() {
       <CardMedia
         component="img"
         height="194"
-        image="/static/images/cards/paella.jpg"
+        image="/Untitled.jpg"
         alt="Paella dish"
       />
       <CardContent>
@@ -50,9 +50,9 @@ function Post() {
         </IconButton>
         <IconButton aria-label="share">
           <ShareIcon />
-        </IconButton>       
+        </IconButton>
       </CardActions>
-            </Card>
+    </Card>
   );
 }
 
