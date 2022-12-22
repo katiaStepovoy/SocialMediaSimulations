@@ -2,16 +2,18 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js"
+    "start": "nodemon app.js",
+    "start-server": "node app.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Katia Stepovoy",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
+    "express": "^4.18.2",
     "mongodb": "^4.12.1",
     "mongoose": "^6.8.0",
     "xpress": "^2.4.6"
