@@ -1,10 +1,14 @@
-const http = require('http');
-const express = require('express');
+const express = require("express");
+const bodyParser = require('body-parser');
 
-console.log("server up");
-	const server = http.createServer((req,res) => {
-		console.log(req.url, req.method, req.headers);
-		res.setHeader('Content-Type', 'text/html');
-	});
-	server.listen(3000); 
+const app = express();
 
+const simulationRoutes = require('./routes/simulation');
+
+const mongoConnect = require('./util/database').mongoConnect;
+
+app.use(simulationRoutes);
+
+mongoConnect(() => {
+    app.listen(3000);
+});
