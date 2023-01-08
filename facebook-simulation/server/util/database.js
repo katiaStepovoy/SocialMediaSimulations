@@ -4,11 +4,11 @@ const MongoClient = mongodb.MongoClient;
 let _db;
 
 const mongoConnect = callback => {
-    MongoClient.connect('mongodb+srv://katia:tEX8evlTCqSeGNZg@facebookmock.dsjzbsd.mongodb.net/test')
+    MongoClient.connect('mongodb+srv://katia:tEX8evlTCqSeGNZg@facebookmock.dsjzbsd.mongodb.net/Facebook')
     .then(client => {
         console.log('connected!');
         _db = client.db();
-        callback();
+        callback(client);
     })
     .catch(err => {
         console.log(err);
@@ -25,5 +25,3 @@ const getDb = () => {
 
 module.exports.mongoConnect = mongoConnect;
 module.exports.getDb = getDb;
-
-//module.exports = mongoConnect;

@@ -1,20 +1,38 @@
-import * as React from 'react';
-import { Paper, Stack } from '@mui/material';
-import Post from './Post';
-import Header from './Header';
+import * as React from "react";
+import { Paper, Stack } from "@mui/material";
+import Post from "./Post";
+import Header from "./Header";
+import { useState, useEffect } from "react";
 
 function Feed(props) {
-    var background = props.backgroundColor;
-    return (
-        <Paper elevation={0} sx={{ bgcolor: 'transparent' }} >
-            <Stack spacing={2} >
-                <Header backgroundColor={background}/>
-                <Post backgroundColor={background}/>
-                <Post backgroundColor={background}/>
-                <Post backgroundColor={background}/>
-            </Stack>
-        </Paper>
-    );
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:8080/facebook")
+      .then((res) => res.json())
+      .then((data) => setPosts(data))
+      .catch((err) => console.log(err.message));
+  }, []);
+
+  posts.sort((post1, post2) => post1.time.localeCompare(post2.time)).reverse();
+
+  var bcolor = props.bcolor;
+  return (
+    <Paper elevation={0} sx={{ bgcolor: "transparent" }}>
+      <Stack spacing={2}>
+        <Header bcolor={bcolor} />
+        {posts.map((post) => (
+          <Post
+            backgroundColor={bcolor}
+            content={post.content}
+            date={post.time}
+            name={post.username}
+            location={post.location}
+          />
+        ))}
+      </Stack>
+    </Paper>
+  );
 }
 
 export default Feed;
