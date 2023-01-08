@@ -11,10 +11,10 @@ function Twitter() {
         <TwitterMenu />
       </Grid>
       <Grid item xs={7}>
-        <Feed backgroundColor={"black"} />
+        <Feed bcolor="black"/>
       </Grid>
       <Grid item xs={2.5}>
-        <Contacts fontColor={"white"} />
+        <Contacts fontColor="white"/>
       </Grid>
     </Grid>
   );

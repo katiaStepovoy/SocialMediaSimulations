@@ -27,7 +27,7 @@ function Menu(props) {
     categories.forEach((category, index) => {
         const myicon = icons[index];
         itemsList.push(
-            <ListItem color= {fontColor}>
+            <ListItem color= {fontColor} key={index}>
                 <ListItemAvatar>
                     {myicon}
                 </ListItemAvatar>

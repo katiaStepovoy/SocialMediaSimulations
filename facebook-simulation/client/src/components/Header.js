@@ -8,15 +8,13 @@ import Grid from '@mui/material/Grid';
 import AddPhotoAlternateIcon from '@mui/icons-material/AddPhotoAlternate';
 import VideoCallIcon from '@mui/icons-material/VideoCall';
 
-
-
 function Header(props) {
     var name = "Remy Sharp";
     var label = "Whats on your mind, " + name + "?";
-    var color = props.backgroundColor;
+    var bcolor = props.bcolor;
 
     return (
-        <Card backgroundColor={color} sx={{ borderRadius: 4, height: 150, mt: '30px' }} >
+        <Card sx={{backgroundColor:bcolor, borderRadius: 4, height: 150, mt: '30px' }} >
             <CardContent>
                 <TextField
                     fullWidth
