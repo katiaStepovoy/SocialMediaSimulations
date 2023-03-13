@@ -5,10 +5,11 @@ import Header from "./Header";
 import { useState, useEffect } from "react";
 
 function Feed(props) {
+  const db = props.db;
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:8080/facebook")
+    fetch(db)
       .then((res) => res.json())
       .then((data) => setPosts(data))
       .catch((err) => console.log(err.message));

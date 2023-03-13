@@ -19,7 +19,7 @@ function Facebook() {
         <Menu provider={"Facemock"}/>
       </Grid>
       <Grid item xs={7}   >
-        <Feed backgroundColor='transparent'/>
+        <Feed backgroundColor='transparent' db='http://localhost:8080/facebook'/>
       </Grid>
       <Grid item xs={2.5} >
         <Contacts />
