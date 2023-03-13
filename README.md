@@ -1,15 +1,9 @@
 # Social Media Simulations
 
-## to run front end:
-```
-cd SocialMediaSimulations\facebook-simulation\client
-npm start
-```
-
-## to run back end:
+## to run both back & front:
 ```
 cd SocialMediaSimulations\facebook-simulation\server
-nodemon start
+npm run dev
 ```
 
 ## Mock-up addresses:
