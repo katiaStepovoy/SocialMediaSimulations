@@ -22,8 +22,9 @@ function Feed(props) {
     <Paper elevation={0} sx={{ bgcolor: "transparent" }}>
       <Stack spacing={2}>
         <Header bcolor={bcolor} />
-        {posts.map((post) => (
+        {posts.map((post, index) => (
           <Post
+            key={index}
             backgroundColor={bcolor}
             content={post.content}
             date={post.time}
