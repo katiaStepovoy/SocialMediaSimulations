@@ -1,13 +1,13 @@
-const path = require('path');
-const express = require('express');
+const path = require("path");
+const express = require("express");
 
 const router = express.Router();
 
-const postsController = require('../controllers/postsController');
-const errorController = require('../controllers/errorController');
+const postsController = require("../controllers/postsController");
+const errorController = require("../controllers/errorController");
 
-router.get('/facebook', postsController.getPosts);
-router.get('/post', postsController.postPost);
+router.get("/facebook", postsController.getPosts);
+router.get("/post", postsController.postPost);
 
 router.use(errorController.err);
 
