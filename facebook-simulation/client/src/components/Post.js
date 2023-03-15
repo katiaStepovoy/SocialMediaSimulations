@@ -12,7 +12,7 @@ import ShareIcon from "@mui/icons-material/Share";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 
 function Post(props) {
-  var color = props.backgroundColor;
+  //var color = props.backgroundColor;
   var name = props.name;
   var dateJSON = new Date(props.date);
   var date = dateJSON.toLocaleString();

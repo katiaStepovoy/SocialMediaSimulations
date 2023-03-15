@@ -1,8 +1,9 @@
 const getDb = require("../util/database").getDb;
 
 module.exports = class Post {
-  constructor(location, content, time, username) {
-    this.location = location;
+  constructor(long, lat, content, time, username) {
+    this.long = long;
+    this.lat = lat;
     this.content = content;
     this.time = time;
     this.username = username;
@@ -10,25 +11,23 @@ module.exports = class Post {
 
   save() {
     const db = getDb();
-    return db.collection("facebookPosts").insertOne({
-      location: "5.29.9.190",
-      content: "have a bomb day yall",
-      time: "2022-10-23T18:25:43.511Z",
-      username: "Jayvion Bryant",
-    })
-    .then(result => console.log(result))
-    .catch(err => console.log(err));
+    return db
+      .collection("facebookPosts")
+      .insertOne(this)
+      .then((result) => console.log(result))
+      .catch((err) => console.log(err));
   }
 
   static fetchAll() {
     const db = getDb();
-    return db.collection('facebookPosts').find().toArray()
-    .then(posts => {
-      return posts;
-    })
-    .catch(err => console.log(err));    
+    return db
+      .collection("facebookPosts")
+      .find()
+      .toArray()
+      .then((posts) => {
+        return posts;
+      })
+      .catch((err) => console.log(err));
   }
-
-  fetchById() {
-  }
-}
+  //fetchById() {}
+};

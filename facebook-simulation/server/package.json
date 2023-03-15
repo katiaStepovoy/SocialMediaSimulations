@@ -7,10 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js",
     "start-server": "node app.js",
-    "server": "nodemon",
-    "client": "cd ../ && npm start --prefix client",
-    "build": "cd ../ && npm run build --prefix client",
-    "dev": "concurrently \"npm run start\" \"npm run client\""
+    "server": "nodemon"
   },
   "keywords": [],
   "author": "Katia Stepovoy",
@@ -21,22 +18,7 @@
     "express": "^4.18.2",
     "mongodb": "^4.13.0",
     "mongoose": "^6.8.0",
-    "xpress": "^2.4.6",
-    "@emotion/react": "^11.10.5",
-    "@emotion/styled": "^11.10.5",
-    "@fontsource/roboto": "^4.5.8",
-    "@mui/icons-material": "^5.11.0",
-    "@mui/material": "^5.11.1",
-    "@mui/styled-engine-sc": "^5.11.0",
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.4.4",
-    "react-scripts": "5.0.1",
-    "styled-components": "^5.3.6",
-    "web-vitals": "^2.1.4"
+    "xpress": "^2.4.6"
   },
   "devDependencies": {
     "concurrently": "^7.6.0",

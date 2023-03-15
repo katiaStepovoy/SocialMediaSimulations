@@ -1,26 +1,28 @@
-const mongodb = require('mongodb');
+const mongodb = require("mongodb");
 const MongoClient = mongodb.MongoClient;
 
 let _db;
 
-const mongoConnect = callback => {
-    MongoClient.connect('mongodb+srv://katia:tEX8evlTCqSeGNZg@facebookmock.dsjzbsd.mongodb.net/Facebook')
-    .then(client => {
-        console.log('connected!');
-        _db = client.db();
-        callback(client);
+const mongoConnect = (callback) => {
+  MongoClient.connect(
+    "mongodb+srv://katia:tEX8evlTCqSeGNZg@facebookmock.dsjzbsd.mongodb.net/Facebook"
+  )
+    .then((client) => {
+      console.log("connected to DB!");
+      _db = client.db();
+      callback(client);
     })
-    .catch(err => {
-        console.log(err);
-        throw err;
+    .catch((err) => {
+      console.log(err);
+      throw err;
     });
 };
 
 const getDb = () => {
-    if (_db) {
-        return _db;
-    }
-    throw 'No database found!';
+  if (_db) {
+    return _db;
+  }
+  throw "No database found!";
 };
 
 module.exports.mongoConnect = mongoConnect;
