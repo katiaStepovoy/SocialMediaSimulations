@@ -4,7 +4,7 @@ import Twitter from "./Simulations/Twitter.js";
 import Telegram from "./Simulations/Telegram.js";
 import Reddit from "./Simulations/Reddit.js";
 
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
