@@ -36,7 +36,7 @@ function Header(props) {
         username: name,
       }),
     };
-    fetch("http://localhost:8080/facebook", requestOptions)
+    fetch("https://mockups.onrender.com/facebook", requestOptions)
       .then((response) => response.json())
       .catch((err) => console.log(err));
   };
