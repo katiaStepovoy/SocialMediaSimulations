@@ -1,5 +1,4 @@
 import * as React from "react";
-import Typography from "@mui/material/Typography";
 import Avatar from "@mui/material/Avatar";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
@@ -10,33 +9,42 @@ import { red } from "@mui/material/colors";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import ShareIcon from "@mui/icons-material/Share";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
+import Box from "@mui/material/Box";
+import styled from "styled-components";
 
 function Post(props) {
-  //var color = props.backgroundColor;
-  var name = props.name;
-  var dateJSON = new Date(props.date);
-  var date = dateJSON.toLocaleString();
-  var content = props.content;
+  const name = props.name;
+  const date = new Date(props.date).toLocaleString();
+  const content = props.content;
+  const location = "Lat. " + props.lat + " · Long. " + props.long;
+  const details = (
+    <DetailsBox sx={{ typography: "caption" }}>
+      <Box>{date}</Box>
+      <Location>
+        <LocationOnIcon fontSize="small" />
+        {location}
+      </Location>
+    </DetailsBox>
+  );
 
   return (
     <Card variant="outlined" sx={{ borderRadius: 4 }}>
       <CardHeader
         sx={{ textAlign: "left" }}
-        avatar={<Avatar sx={{ bgcolor: red[500] }}>{name.charAt(0)}</Avatar>}
+        avatar={<NameIcon>{name.charAt(0)}</NameIcon>}
         action={
           <IconButton aria-label="settings">
             <MoreVertIcon />
           </IconButton>
         }
         title={name}
-        subheader={date}
+        subheader={details}
       />
-      <CardContent>
-        <Typography variant="body2" color="text.secondary">
-          {content}
-        </Typography>
+      <CardContent sx={{ typography: "body2", color: "text.secondary" }}>
+        {content}
       </CardContent>
-      <CardActions disableSpacing>
+      <CardActions>
         <IconButton aria-label="add to favorites">
           <FavoriteIcon />
         </IconButton>
@@ -49,3 +57,20 @@ function Post(props) {
 }
 
 export default Post;
+
+const DetailsBox = styled(Box)({
+  flexDirection: "row",
+  display: "flex",
+  gap: "30px",
+  alignItems: "center",
+});
+
+const Location = styled(Box)({
+  flexDirection: "row",
+  display: "flex",
+  alignItems: "center",
+});
+
+const NameIcon = styled(Avatar)({
+  backgroundColor: red[500],
+});

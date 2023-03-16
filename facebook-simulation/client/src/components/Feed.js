@@ -29,7 +29,8 @@ function Feed(props) {
             content={post.content}
             date={post.time}
             name={post.username}
-            location={post.location}
+            lat={post.lat}
+            long={post.long}
           />
         ))}
       </Stack>
