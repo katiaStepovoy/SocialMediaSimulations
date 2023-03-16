@@ -46,7 +46,6 @@ function Header(props) {
   const onHandlePost = (e) => {
     e.preventDefault();
     setValue("");
-    // TODO send post request
     post();
     window.location.reload();
   };
