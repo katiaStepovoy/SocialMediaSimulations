@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
@@ -17,11 +17,9 @@ function Header(props) {
   var lat, long;
 
   // get user location
-  useEffect(() => {
-    navigator.geolocation.getCurrentPosition(function (position) {
-      lat = position.coords.latitude;
-      long = position.coords.longitude;
-    });
+  navigator.geolocation.getCurrentPosition(function (position) {
+    lat = position.coords.latitude;
+    long = position.coords.longitude;
   });
 
   const post = () => {
@@ -47,7 +45,8 @@ function Header(props) {
     e.preventDefault();
     setValue("");
     post();
-    window.location.reload();
+    props.setPosts([]);
+    //window.location.reload();
   };
 
   return (
