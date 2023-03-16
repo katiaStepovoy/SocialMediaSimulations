@@ -13,7 +13,7 @@ function Facebook() {
       <Grid item xs={7}>
         <Feed
           backgroundColor="transparent"
-          db="http://localhost:8080/facebook"
+          db="https://mockups.onrender.com/facebook"
         />
       </Grid>
       <Grid item xs={2.5}>

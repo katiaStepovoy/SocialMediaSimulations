@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
@@ -17,11 +17,9 @@ function Header(props) {
   var lat, long;
 
   // get user location
-  useEffect(() => {
-    navigator.geolocation.getCurrentPosition(function (position) {
-      lat = position.coords.latitude;
-      long = position.coords.longitude;
-    });
+  navigator.geolocation.getCurrentPosition(function (position) {
+    lat = position.coords.latitude;
+    long = position.coords.longitude;
   });
 
   const post = () => {
@@ -36,7 +34,7 @@ function Header(props) {
         username: name,
       }),
     };
-    fetch("http://localhost:8080/facebook", requestOptions)
+    fetch("https://mockups.onrender.com/facebook", requestOptions)
       .then((response) => response.json())
       .catch((err) => console.log(err));
   };
@@ -46,9 +44,9 @@ function Header(props) {
   const onHandlePost = (e) => {
     e.preventDefault();
     setValue("");
-    // TODO send post request
     post();
-    window.location.reload();
+    props.setPosts([]);
+    //window.location.reload();
   };
 
   return (

@@ -13,7 +13,7 @@ function Feed(props) {
       .then((res) => res.json())
       .then((data) => setPosts(data))
       .catch((err) => console.log(err.message));
-  }, []);
+  }, [posts, db]);
 
   posts.sort((post1, post2) => post1.time.localeCompare(post2.time)).reverse();
 
@@ -21,7 +21,7 @@ function Feed(props) {
   return (
     <Paper elevation={0} sx={{ bgcolor: "transparent" }}>
       <Stack spacing={2}>
-        <Header bcolor={bcolor} />
+        <Header bcolor={bcolor} updatePosts={setPosts} />
         {posts.map((post, index) => (
           <Post
             key={index}
@@ -29,7 +29,8 @@ function Feed(props) {
             content={post.content}
             date={post.time}
             name={post.username}
-            location={post.location}
+            lat={post.lat}
+            long={post.long}
           />
         ))}
       </Stack>
