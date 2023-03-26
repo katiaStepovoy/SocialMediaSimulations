@@ -10,6 +10,7 @@ import AddPhotoAlternateIcon from "@mui/icons-material/AddPhotoAlternate";
 import VideoCallIcon from "@mui/icons-material/VideoCall";
 
 function Header(props) {
+  const db = props.db;
   var name = "Remy Sharp";
   var label = "Whats on your mind, " + name + "?";
   var bcolor = props.bcolor;
@@ -34,7 +35,7 @@ function Header(props) {
         username: name,
       }),
     };
-    fetch("https://mockups.onrender.com/facebook", requestOptions)
+    fetch(db, requestOptions)
       .then((response) => response.json())
       .catch((err) => console.log(err));
   };
@@ -46,7 +47,6 @@ function Header(props) {
     setValue("");
     post();
     props.setPosts([]);
-    //window.location.reload();
   };
 
   return (

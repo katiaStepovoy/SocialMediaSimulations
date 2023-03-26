@@ -5,6 +5,7 @@ import Menu from "../components/Menu.js";
 import Grid from "@mui/material/Grid";
 
 function Facebook() {
+  document.title = "Facebook";
   return (
     <Grid container spacing={5} style={{ backgroundColor: "Gainsboro" }}>
       <Grid item xs={2.5}>
