@@ -12,8 +12,17 @@ router.use(bodyParser.json());
 const postsController = require("../controllers/postsController");
 const errorController = require("../controllers/errorController");
 
-router.get("/facebook", postsController.getPosts);
-router.post("/facebook", postsController.postPost);
+router.get("/facebook", postsController.getFacebookPosts);
+router.post("/facebook", postsController.postFacebookPost);
+
+router.get("/twitter", postsController.getTwitterPosts);
+router.post("/twitter", postsController.postTwitterPost);
+
+// router.get("/facebook", postsController.getFacebookPosts);
+// router.post("/facebook", postsController.postFacebookPost);
+
+// router.get("/facebook", postsController.getFacebookPosts);
+// router.post("/facebook", postsController.postFacebookPost);
 
 router.use(errorController.err);
 
