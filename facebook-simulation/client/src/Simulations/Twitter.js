@@ -11,10 +11,10 @@ function Twitter() {
         <TwitterMenu />
       </Grid>
       <Grid item xs={7}>
-        <Feed bcolor="black"/>
+        <Feed bcolor="black" db="https://mockups.onrender.com/twitter" />
       </Grid>
       <Grid item xs={2.5}>
-        <Contacts fontColor="white"/>
+        <Contacts fontColor="white" />
       </Grid>
     </Grid>
   );

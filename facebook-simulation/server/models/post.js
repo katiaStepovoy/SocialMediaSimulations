@@ -9,19 +9,19 @@ module.exports = class Post {
     this.username = username;
   }
 
-  save() {
+  save(collection) {
     const db = getDb();
     return db
-      .collection("facebookPosts")
+      .collection(collection)
       .insertOne(this)
       .then((result) => console.log(result))
       .catch((err) => console.log(err));
   }
 
-  static fetchAll() {
+  static fetchAll(collection) {
     const db = getDb();
     return db
-      .collection("facebookPosts")
+      .collection(collection)
       .find()
       .toArray()
       .then((posts) => {
