@@ -2,8 +2,9 @@ const bodyParser = require("body-parser");
 
 const Post = require("../models/post");
 
+// Facebook
 exports.getFacebookPosts = (req, res) => {
-  Post.fetchAll("facebookPosts")
+  Post.fetchAll("facebook")
     .then(res.setHeader("Access-Control-Allow-Origin", "*"))
     .then((posts) => res.send(posts))
     .catch((err) => conosole.log(err));
@@ -18,13 +19,14 @@ exports.postFacebookPost = (req, res, next) => {
     req.body.username
   );
   post
-    .save("facebookPosts")
+    .save("facebook")
     //.then((res) => res.redirect("/"))
     .catch((err) => console.log(err));
 };
 
+// Twitter
 exports.getTwitterPosts = (req, res) => {
-  Post.fetchAll("twitterPosts")
+  Post.fetchAll("twitter")
     .then(res.setHeader("Access-Control-Allow-Origin", "*"))
     .then((posts) => res.send(posts))
     .catch((err) => conosole.log(err));
@@ -38,5 +40,5 @@ exports.postTwitterPost = (req, res, next) => {
     req.body.time,
     req.body.username
   );
-  post.save("twitterPosts").catch((err) => console.log(err));
+  post.save("twitter").catch((err) => console.log(err));
 };
