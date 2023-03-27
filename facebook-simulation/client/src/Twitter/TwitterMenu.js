@@ -1,5 +1,5 @@
 import * as React from "react";
-import PersonIcon from '@mui/icons-material/Person';
+import PersonIcon from "@mui/icons-material/Person";
 import GroupIcon from "@mui/icons-material/Group";
 import StorefrontIcon from "@mui/icons-material/Storefront";
 import EventIcon from "@mui/icons-material/Event";
@@ -12,26 +12,36 @@ import ListItem from "@mui/material/ListItem";
 
 function TwitterMenu(props) {
   return (
-    <Paper elevation={0} sx={{ bgcolor: "transparent" }}>
-      <TwitterIcon sx={{paddingLeft: '13vw', paddingTop: '5vh', color: "white", fontSize: "5vw" }} />
-      <List sx={{paddingLeft: '12.5vw'}}>
+    <Paper
+      elevation={0}
+      sx={{ bgcolor: "transparent", overflow: "hidden", position: "fixed" }}
+    >
+      <TwitterIcon
+        sx={{
+          paddingLeft: "13vw",
+          paddingTop: "5vh",
+          color: "white",
+          fontSize: "5vw",
+        }}
+      />
+      <List sx={{ paddingLeft: "12.5vw" }}>
         <ListItem alignItems="center">
-          <PersonIcon style={{ color: 'white' }} />
+          <PersonIcon style={{ color: "white" }} />
         </ListItem>
         <ListItem>
-          <GroupIcon style={{ color: 'white' }} />
+          <GroupIcon style={{ color: "white" }} />
         </ListItem>
         <ListItem>
-          <StorefrontIcon style={{ color: 'white' }} />
+          <StorefrontIcon style={{ color: "white" }} />
         </ListItem>
         <ListItem>
-          <EventIcon style={{ color: 'white' }} />
+          <EventIcon style={{ color: "white" }} />
         </ListItem>
         <ListItem>
-          <StarIcon style={{ color: 'white' }} />
+          <StarIcon style={{ color: "white" }} />
         </ListItem>
         <ListItem>
-          <BookmarkIcon style={{ color: 'white' }} />
+          <BookmarkIcon style={{ color: "white" }} />
         </ListItem>
       </List>
     </Paper>

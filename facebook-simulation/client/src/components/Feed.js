@@ -3,10 +3,13 @@ import { Paper, Stack } from "@mui/material";
 import Post from "./Post";
 import Header from "./Header";
 import { useState, useEffect } from "react";
+import RedditHeader from "../Reddit/RedditHeader.js";
 
 function Feed(props) {
   const db = props.db;
+  const reddit = props.reddit;
   const [posts, setPosts] = useState([]);
+  console.log(reddit);
 
   useEffect(() => {
     fetch(db)
@@ -19,9 +22,13 @@ function Feed(props) {
 
   var bcolor = props.bcolor;
   return (
-    <Paper elevation={0} sx={{ bgcolor: "transparent" }}>
+    <Paper elevation={0} sx={{ bgcolor: "transparent", overflow: "auto" }}>
       <Stack spacing={2}>
-        <Header bcolor={bcolor} updatePosts={setPosts} db={db} />
+        {reddit ? (
+          <RedditHeader />
+        ) : (
+          <Header bcolor={bcolor} updatePosts={setPosts} db={db} />
+        )}
         {posts.map((post, index) => (
           <Post
             key={index}

@@ -1,8 +1,8 @@
 import * as React from "react";
 import Facebook from "./Simulations/Facebook.js";
-import Twitter from "./Simulations/Twitter.js";
+import Twitter from "./Twitter/Twitter.js";
 import Telegram from "./Simulations/Telegram.js";
-import Reddit from "./Simulations/Reddit.js";
+import Reddit from "./Reddit/Reddit.js";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 

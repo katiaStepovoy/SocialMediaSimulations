@@ -76,7 +76,7 @@ function Contacts(props) {
   });
 
   return (
-    <Paper elevation={0} sx={{ bgcolor: "transparent" }}>
+    <Paper elevation={0} sx={{ bgcolor: "transparent", overflow: "auto" }}>
       <Box sx={{ mt: 4 }}>
         <Typography fontSize="1.5vw" color="gray" fontWeight="700">
           Contacts

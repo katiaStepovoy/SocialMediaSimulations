@@ -2,7 +2,7 @@ import * as React from "react";
 import Feed from "../components/Feed.js";
 import Contacts from "../components/Contacts.js";
 import Grid from "@mui/material/Grid";
-import TwitterMenu from "../components/TwitterMenu.js";
+import TwitterMenu from "./TwitterMenu.js";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 function Twitter() {

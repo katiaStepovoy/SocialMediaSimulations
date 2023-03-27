@@ -18,8 +18,8 @@ router.post("/facebook", postsController.postFacebookPost);
 router.get("/twitter", postsController.getTwitterPosts);
 router.post("/twitter", postsController.postTwitterPost);
 
-// router.get("/facebook", postsController.getFacebookPosts);
-// router.post("/facebook", postsController.postFacebookPost);
+router.get("/reddit", postsController.getRedditPosts);
+router.post("/reddit", postsController.postRedditPost);
 
 // router.get("/facebook", postsController.getFacebookPosts);
 // router.post("/facebook", postsController.postFacebookPost);

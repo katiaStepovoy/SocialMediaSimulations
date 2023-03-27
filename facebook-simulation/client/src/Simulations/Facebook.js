@@ -3,13 +3,25 @@ import Feed from "../components/Feed.js";
 import Contacts from "../components/Contacts.js";
 import Menu from "../components/Menu.js";
 import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
 
 function Facebook() {
   document.title = "Facebook";
   return (
-    <Grid container spacing={5} style={{ backgroundColor: "Gainsboro" }}>
+    <Grid
+      container
+      spacing={5}
+      style={{ backgroundColor: "Gainsboro", overflow: "auto" }}
+    >
       <Grid item xs={2.5}>
-        <Menu provider={"Facemock"} />
+        <Menu
+          provider={"Facemock"}
+          icon={
+            <Typography fontSize="3vw" color="navy" fontWeight="900">
+              Facebook
+            </Typography>
+          }
+        />
       </Grid>
       <Grid item xs={7}>
         <Feed
