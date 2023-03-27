@@ -16,14 +16,26 @@ function Reddit() {
 
   return (
     <ThemeProvider theme={lightTheme}>
-      <Grid container spacing={5} style={{ backgroundColor: "Gainsboro" }}>
+      <Grid
+        container
+        justifyContent="center"
+        spacing={5}
+        style={{ backgroundColor: "Gainsboro" }}
+      >
         <Grid item xs={12} sx={{ paddingBottom: 2 }}>
           <RedditToolbar />
         </Grid>
-        <Grid item xs={9.5}>
+        <Grid
+          item
+          xs={9}
+          sx={{
+            display: "grid",
+            margin: 2,
+          }}
+        >
           <Feed reddit={1} db="https://mockups.onrender.com/reddit" />
         </Grid>
-        <Grid item xs={2.5}>
+        <Grid item xs={2} sx={{ justifyContent: "flex-end" }}>
           <RedditMenu />
         </Grid>
       </Grid>

@@ -45,7 +45,6 @@ function RedditToolbar(props) {
   return (
     <AppBar
       sx={{
-        width: "100%",
         overflow: "hidden",
         position: "fixed",
         backgroundColor: "#A4A4A4",
@@ -88,8 +87,10 @@ function RedditToolbar(props) {
             inputProps={{ "aria-label": "search" }}
           />
         </Search>
-        <FaceOutlinedIcon sx={{ paddingRight: 2 }} />
-        <Typography color="inherit">{name}</Typography>
+        <FaceOutlinedIcon sx={{ paddingRight: 1 }} />
+        <Typography fontFamily="Segoe UI" color="inherit">
+          {name}
+        </Typography>
       </Toolbar>
     </AppBar>
   );

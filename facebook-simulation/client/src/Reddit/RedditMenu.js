@@ -32,11 +32,12 @@ function RedditMenu(props) {
   return (
     <List
       sx={{
-        position: "center",
         fontFamily: "Helvetica",
         fontSize: 14,
         padding: 3,
         backgroundColor: "white",
+        overflow: "hidden",
+        position: "fixed",
       }}
     >
       <ListItem sx={{ color: "#989898" }}>Come visit our forums:</ListItem>

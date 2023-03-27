@@ -9,7 +9,6 @@ function Feed(props) {
   const db = props.db;
   const reddit = props.reddit;
   const [posts, setPosts] = useState([]);
-  console.log(reddit);
 
   useEffect(() => {
     fetch(db)
@@ -22,7 +21,7 @@ function Feed(props) {
 
   var bcolor = props.bcolor;
   return (
-    <Paper elevation={0} sx={{ bgcolor: "transparent", overflow: "auto" }}>
+    <Paper elevation={0} sx={{ bgcolor: "transparent" }}>
       <Stack spacing={2}>
         {reddit ? (
           <RedditHeader />
