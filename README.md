@@ -13,9 +13,9 @@ nodemon start
 
 
 ## Mock-up addresses:
-[Facebook](https://project-simulations.onrender.com/facebook)
-[Twitter](https://project-simulations.onrender.com/twitter)
-[Reddit](https://project-simulations.onrender.com/reddit)
+-[Facebook](https://project-simulations.onrender.com/facebook)
+-[Twitter](https://project-simulations.onrender.com/twitter)
+-[Reddit](https://project-simulations.onrender.com/reddit)
 
 
 
