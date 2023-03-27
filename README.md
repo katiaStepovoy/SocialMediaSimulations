@@ -3,7 +3,7 @@
 ## to run front:
 ```
 cd SocialMediaSimulations\facebook-simulation\client
-cpm start
+npm start
 ```
 ## to run back:
 ```
