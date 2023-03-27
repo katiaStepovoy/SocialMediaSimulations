@@ -1,16 +1,22 @@
 # Social Media Simulations
 
-## to run both back & front:
+## to run front:
+```
+cd SocialMediaSimulations\facebook-simulation\client
+cpm start
+```
+## to run back:
 ```
 cd SocialMediaSimulations\facebook-simulation\server
-npm run dev
+nodemon start
 ```
+
 
 ## Mock-up addresses:
 ```
-localhost:3000\facebook
-localhost:3000\twitter
-localhost:3000\reddit
+[Facebook](https://project-simulations.onrender.com/facebook)
+[Twitter](https://project-simulations.onrender.com/twitter)
+[Reddit](https://project-simulations.onrender.com/reddit)
 ```
 
 
