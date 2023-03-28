@@ -4,8 +4,8 @@ var cors = require("cors");
 
 const router = express.Router();
 
-//router.use(cors({ origin: "https://project-simulations.onrender.com" }));
-router.use(cors({ origin: "http://localhost:3000" }));
+router.use(cors({ origin: "https://project-simulations.onrender.com" }));
+//router.use(cors({ origin: "http://localhost:3000" }));
 
 router.use(bodyParser.urlencoded({ extended: false }));
 router.use(bodyParser.json());

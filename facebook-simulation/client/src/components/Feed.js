@@ -24,7 +24,7 @@ function Feed(props) {
     <Paper elevation={0} sx={{ bgcolor: "transparent" }}>
       <Stack spacing={2}>
         {reddit ? (
-          <RedditHeader />
+          <RedditHeader updatePosts={setPosts} db={db} />
         ) : (
           <Header bcolor={bcolor} updatePosts={setPosts} db={db} />
         )}
