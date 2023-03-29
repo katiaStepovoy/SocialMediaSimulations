@@ -27,6 +27,7 @@ function Facebook() {
         <Feed
           backgroundColor="transparent"
           db="https://mockups.onrender.com/facebook"
+          name="Remy Sharp"
         />
       </Grid>
       <Grid item xs={2.5}>

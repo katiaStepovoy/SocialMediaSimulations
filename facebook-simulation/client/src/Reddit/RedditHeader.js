@@ -6,7 +6,7 @@ import Button from "@mui/material/Button";
 
 function RedditHeader(props) {
   const db = props.db;
-  var name = "Remy Sharp";
+  var name = props.name;
   var label = "Create Post";
   const [value, setValue] = useState("");
   var lat, long;

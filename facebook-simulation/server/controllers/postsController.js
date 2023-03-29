@@ -61,3 +61,25 @@ exports.postRedditPost = (req, res, next) => {
   );
   post.save("reddit").catch((err) => console.log(err));
 };
+
+// DarkWeb
+exports.getDarkPosts = (req, res) => {
+  Post.fetchAll("darkweb")
+    .then(res.setHeader("Access-Control-Allow-Origin", "*"))
+    .then((posts) => {
+      res.send(posts);
+      console.log(posts);
+    })
+    .catch((err) => conosole.log(err));
+};
+
+exports.postDarkPost = (req, res, next) => {
+  const post = new Post(
+    req.body.long,
+    req.body.lat,
+    req.body.content,
+    req.body.time,
+    req.body.username
+  );
+  post.save("darkweb").catch((err) => console.log(err));
+};

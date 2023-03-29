@@ -9,6 +9,7 @@ function Feed(props) {
   const db = props.db;
   const reddit = props.reddit;
   const [posts, setPosts] = useState([]);
+  const name = props.name;
 
   useEffect(() => {
     fetch(db)
@@ -24,9 +25,9 @@ function Feed(props) {
     <Paper elevation={0} sx={{ bgcolor: "transparent" }}>
       <Stack spacing={2}>
         {reddit ? (
-          <RedditHeader updatePosts={setPosts} db={db} />
+          <RedditHeader updatePosts={setPosts} db={db} name={name} />
         ) : (
-          <Header bcolor={bcolor} updatePosts={setPosts} db={db} />
+          <Header bcolor={bcolor} updatePosts={setPosts} db={db} name={name} />
         )}
         {posts.map((post, index) => (
           <Post

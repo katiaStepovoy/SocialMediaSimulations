@@ -29,5 +29,4 @@ module.exports = class Post {
       })
       .catch((err) => console.log(err));
   }
-  //fetchById() {}
 };

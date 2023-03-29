@@ -22,8 +22,8 @@ router.post("/twitter", postsController.postTwitterPost);
 router.get("/reddit", postsController.getRedditPosts);
 router.post("/reddit", postsController.postRedditPost);
 
-// router.get("/facebook", postsController.getFacebookPosts);
-// router.post("/facebook", postsController.postFacebookPost);
+router.get("/darkweb", postsController.getDarkPosts);
+router.post("/darkweb", postsController.postDarkPost);
 
 router.use(errorController.err);
 

@@ -11,7 +11,7 @@ import VideoCallIcon from "@mui/icons-material/VideoCall";
 
 function Header(props) {
   const db = props.db;
-  var name = "Remy Sharp";
+  var name = props.name;
   var label = "Whats on your mind, " + name + "?";
   var bcolor = props.bcolor;
   const [value, setValue] = useState("");

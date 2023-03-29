@@ -20,7 +20,11 @@ function Twitter() {
           <TwitterMenu />
         </Grid>
         <Grid item xs={7}>
-          <Feed bcolor="black" db="https://mockups.onrender.com/twitter" />
+          <Feed
+            bcolor="black"
+            db="https://mockups.onrender.com/twitter"
+            name="Remy Sharp"
+          />
         </Grid>
         <Grid item xs={2.5}>
           <Contacts fontColor="white" />
