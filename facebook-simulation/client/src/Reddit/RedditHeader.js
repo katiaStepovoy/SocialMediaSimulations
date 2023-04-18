@@ -38,8 +38,8 @@ function RedditHeader(props) {
 
   const onHandlePost = (e) => {
     e.preventDefault();
-    setValue("");
     post();
+    setValue("");
     props.setPosts([]);
   };
 
