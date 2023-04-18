@@ -2,14 +2,15 @@ const bodyParser = require("body-parser");
 
 const Post = require("../models/post");
 
-exports.getPosts = (req, res) => {
-  Post.fetchAll()
+// Facebook
+exports.getFacebookPosts = (req, res) => {
+  Post.fetchAll("facebook")
     .then(res.setHeader("Access-Control-Allow-Origin", "*"))
     .then((posts) => res.send(posts))
     .catch((err) => conosole.log(err));
 };
 
-exports.postPost = (req, res, next) => {
+exports.postFacebookPost = (req, res, next) => {
   const post = new Post(
     req.body.long,
     req.body.lat,
@@ -18,7 +19,67 @@ exports.postPost = (req, res, next) => {
     req.body.username
   );
   post
-    .save()
-    .then((res) => res.redirect("/facebook"))
+    .save("facebook")
+    //.then((res) => res.redirect("/"))
     .catch((err) => console.log(err));
+};
+
+// Twitter
+exports.getTwitterPosts = (req, res) => {
+  Post.fetchAll("twitter")
+    .then(res.setHeader("Access-Control-Allow-Origin", "*"))
+    .then((posts) => res.send(posts))
+    .catch((err) => conosole.log(err));
+};
+
+exports.postTwitterPost = (req, res, next) => {
+  const post = new Post(
+    req.body.long,
+    req.body.lat,
+    req.body.content,
+    req.body.time,
+    req.body.username
+  );
+  post.save("twitter").catch((err) => console.log(err));
+};
+
+// Reddit
+exports.getRedditPosts = (req, res) => {
+  Post.fetchAll("reddit")
+    .then(res.setHeader("Access-Control-Allow-Origin", "*"))
+    .then((posts) => res.send(posts))
+    .catch((err) => conosole.log(err));
+};
+
+exports.postRedditPost = (req, res, next) => {
+  const post = new Post(
+    req.body.long,
+    req.body.lat,
+    req.body.content,
+    req.body.time,
+    req.body.username
+  );
+  post.save("reddit").catch((err) => console.log(err));
+};
+
+// DarkWeb
+exports.getDarkPosts = (req, res) => {
+  Post.fetchAll("darkweb")
+    .then(res.setHeader("Access-Control-Allow-Origin", "*"))
+    .then((posts) => {
+      res.send(posts);
+      console.log(posts);
+    })
+    .catch((err) => conosole.log(err));
+};
+
+exports.postDarkPost = (req, res, next) => {
+  const post = new Post(
+    req.body.long,
+    req.body.lat,
+    req.body.content,
+    req.body.time,
+    req.body.username
+  );
+  post.save("darkweb").catch((err) => console.log(err));
 };

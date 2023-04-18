@@ -1,15 +1,11 @@
 import * as React from "react";
 import { Paper, Stack } from "@mui/material";
-import Post from "./Post";
-import Header from "./Header";
+import DarkPost from "./DarkPost.js";
 import { useState, useEffect } from "react";
-import RedditHeader from "../Reddit/RedditHeader.js";
 
-function Feed(props) {
+function DarkFeed(props) {
   const db = props.db;
-  const reddit = props.reddit;
   const [posts, setPosts] = useState([]);
-  const name = props.name;
 
   useEffect(() => {
     fetch(db)
@@ -20,19 +16,12 @@ function Feed(props) {
 
   posts.sort((post1, post2) => post1.time.localeCompare(post2.time)).reverse();
 
-  var bcolor = props.bcolor;
   return (
     <Paper elevation={0} sx={{ bgcolor: "transparent" }}>
       <Stack spacing={2}>
-        {reddit ? (
-          <RedditHeader updatePosts={setPosts} db={db} name={name} />
-        ) : (
-          <Header bcolor={bcolor} updatePosts={setPosts} db={db} name={name} />
-        )}
         {posts.map((post, index) => (
-          <Post
+          <DarkPost
             key={index}
-            backgroundColor={bcolor}
             content={post.content}
             date={post.time}
             name={post.username}
@@ -45,4 +34,4 @@ function Feed(props) {
   );
 }
 
-export default Feed;
+export default DarkFeed;
