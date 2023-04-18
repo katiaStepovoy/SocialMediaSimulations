@@ -33,7 +33,11 @@ function Reddit() {
             margin: 2,
           }}
         >
-          <Feed reddit={1} db="https://mockups.onrender.com/reddit" />
+          <Feed
+            reddit={1}
+            db="https://mockups.onrender.com/reddit"
+            name="Red Jean"
+          />
         </Grid>
         <Grid item xs={2} sx={{ justifyContent: "flex-end" }}>
           <RedditMenu />
