@@ -20,7 +20,7 @@ function DarkFeed(props) {
 
   return (
     <Paper elevation={0} sx={{ bgcolor: "transparent" }}>
-      <Stack spacing={2}>
+      <Stack spacing={2} alignItems="center">
         <PostForm setPosts={setPosts} db={db} />
         <Divider sx={{ margin: 2 }} />
         {posts.map((post, index) => (
