@@ -1,6 +1,8 @@
 import * as React from "react";
-import { Paper, Stack } from "@mui/material";
+import { Paper, Stack, Divider } from "@mui/material";
 import DarkPost from "./DarkPost.js";
+import PostForm from "./PostForm.js";
+
 import { useState, useEffect } from "react";
 
 function DarkFeed(props) {
@@ -19,6 +21,8 @@ function DarkFeed(props) {
   return (
     <Paper elevation={0} sx={{ bgcolor: "transparent" }}>
       <Stack spacing={2}>
+        <PostForm setPosts={setPosts} db={db} />
+        <Divider sx={{ margin: 2 }} />
         {posts.map((post, index) => (
           <DarkPost
             key={index}

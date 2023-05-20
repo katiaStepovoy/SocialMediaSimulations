@@ -66,10 +66,7 @@ exports.postRedditPost = (req, res, next) => {
 exports.getDarkPosts = (req, res) => {
   Post.fetchAll("darkweb")
     .then(res.setHeader("Access-Control-Allow-Origin", "*"))
-    .then((posts) => {
-      res.send(posts);
-      console.log(posts);
-    })
+    .then((posts) => res.send(posts))
     .catch((err) => conosole.log(err));
 };
 
@@ -81,5 +78,6 @@ exports.postDarkPost = (req, res, next) => {
     req.body.time,
     req.body.username
   );
+
   post.save("darkweb").catch((err) => console.log(err));
 };

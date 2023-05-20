@@ -1,7 +1,6 @@
 import * as React from "react";
 import Grid from "@mui/material/Grid";
 import { Typography, Divider } from "@mui/material";
-import PostForm from "./PostForm.js";
 import DarkFeed from "./DarkFeed.js";
 
 function DarkWeb() {
@@ -36,10 +35,6 @@ function DarkWeb() {
           <Typography variant="h6" fontFamily="Segoe UI" color="#C40000">
             News & current events
           </Typography>
-          <Divider sx={{ margin: 2 }} />
-        </Grid>
-        <Grid item xs={7}>
-          <PostForm />
           <Divider sx={{ margin: 2 }} />
         </Grid>
         <Grid item xs={3}>
