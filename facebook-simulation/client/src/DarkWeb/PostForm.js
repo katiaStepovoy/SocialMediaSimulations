@@ -9,7 +9,7 @@ import Container from "@mui/material/Container";
 
 function PostForm(props) {
   const db = props.db;
-  var name = props.name;
+  const [name, setName] = useState("");
   const [value, setValue] = useState("");
   var lat, long;
 
@@ -36,12 +36,14 @@ function PostForm(props) {
       .catch((err) => console.log(err));
   };
 
-  //const setInput = (input) => setValue(input.target.value);
+  const setInput = (event) => setValue(event.target.value);
+  const setNameInput = (input) => setName(input.target.value);
 
-  const handleSubmit = (e) => {
+  const onHandlePost = (e) => {
     e.preventDefault();
-    setValue("");
     post();
+    setValue("");
+    setName("");
     props.setPosts([]);
   };
 
@@ -55,7 +57,7 @@ function PostForm(props) {
           alignItems: "center",
         }}
       >
-        <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
+        <Box component="form" noValidate sx={{ mt: 3 }}>
           <Grid container spacing={2}>
             <Grid item xs={12}>
               <TextField
@@ -65,6 +67,7 @@ function PostForm(props) {
                 label="Name"
                 name="name"
                 autoComplete="off"
+                onChange={setNameInput}
               />
             </Grid>
             <Grid item xs={12}>
@@ -96,6 +99,7 @@ function PostForm(props) {
                 label="Post Content"
                 multiline
                 rows={4}
+                onChange={setInput}
               />
             </Grid>
           </Grid>
@@ -104,6 +108,7 @@ function PostForm(props) {
             fullWidth
             variant="contained"
             sx={{ mt: 3, mb: 2 }}
+            onClick={onHandlePost}
           >
             Post
           </Button>
