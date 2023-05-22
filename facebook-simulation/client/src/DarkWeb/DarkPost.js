@@ -29,9 +29,11 @@ function DarkPost(props) {
   );
 
   return (
-    <Card variant="outlined" sx={{ borderRadius: 4 }}>
+    <Card
+      variant="outlined"
+      sx={{ borderRadius: 4, width: "50%", textAlign: "left" }}
+    >
       <CardHeader
-        sx={{ textAlign: "left" }}
         avatar={<NameIcon>{name.charAt(0)}</NameIcon>}
         action={
           <IconButton aria-label="settings">

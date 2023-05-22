@@ -37,7 +37,7 @@ function DarkWeb() {
           </Typography>
           <Divider sx={{ margin: 2 }} />
         </Grid>
-        <Grid item xs={3}>
+        <Grid item>
           <DarkFeed db={"https://mockups.onrender.com/darkweb"} />
         </Grid>
       </Grid>
